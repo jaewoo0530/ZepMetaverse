@@ -1,0 +1,139 @@
+# =============== #
+# Unity 기본 설정 #
+# =============== #
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# ============ #
+# 메타데이터 관련 #
+# ============ #
+
+# Unity 자동 생성 파일
+MemoryCaptures/
+SysInfo.txt
+
+# ========== #
+# Asset Store #
+# ========== #
+*.unitypackage
+
+# =========== #
+# OS별 파일들 #
+# =========== #
+
+# Windows
+[Dd]esktop.ini
+[Tt]humbs.db
+ehthumbs.db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ========== #
+# IDE 설정 관련 #
+# ========== #
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.suo
+*.userprefs
+*.tmp
+*.userosscache
+*.log
+*.mdb
+*.opendb
+
+# ========== #
+# 빌드 산출물 #
+# ========== #
+
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.xcodeproj
+*.xcworkspace
+
+# ============= #
+# 기타 임시 파일 #
+# ============= #
+
+*.bak
+*.orig
+*.tmp
+*.temp
+*.pid
+*.old
+*.swp
+*.swo
+*.diff
+
+# ============ #
+# 패키지 관련 #
+# ============ #
+
+# 패키지 캐시 (필요 시 복원 가능)
+Packages/com.unity.package-manager/
+
+# ================ #
+# Addressables 관련 #
+# ================ #
+
+/ServerData/
+/AssetBundles/
+
+# ================ #
+# Unity Cloud Build #
+# ================ #
+
+/[Uu]serSettings/[Cc]loud*/ 
+/[Cc]ollab/
+/[Uu]pdateLogs/
+
+# ============= #
+# Rider Cache    #
+# ============= #
+/.idea/.idea/
+/.idea/caches/
+/.idea/workspace.xml
+
+# ================= #
+# TextMesh Pro 폴더 #
+# ================= #
+/Assets/TextMesh Pro/Resources/*.asset.meta
+/Assets/TextMesh Pro/Resources/*.asset
+
+# =============== #
+# git LFS 관련 설정 #
+# =============== #
+*.psd
+*.tga
+*.png
+*.jpg
+*.jpeg
+*.fbx
+*.obj
+*.wav
+*.mp3
+*.ogg
+*.aiff
+*.exr
+*.hdr
