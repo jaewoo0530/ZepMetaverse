@@ -8,6 +8,8 @@ public class LobbyPlayerController : MonoBehaviour
     private Camera camera;
     private Vector2 direction;
 
+    private LayerMask interactable;
+
     [SerializeField] private SpriteRenderer characterRenderer;
 
     public float playerSpeed = 5f;
@@ -53,9 +55,14 @@ public class LobbyPlayerController : MonoBehaviour
 
     private void TryInteract()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            
+            interactable = LayerMask.GetMask("Interactable");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, interactable);
+            if (hit.collider != null)
+            {
+                hit.collider.GetComponent<IInteractable>()?.OnInteract();
+            }
         }
     }
 }
