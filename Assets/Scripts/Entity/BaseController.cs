@@ -34,7 +34,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Movment(movementDirection);
+        Movement(movementDirection);
         if (knockbackDuration > 0.0f)
         {
             knockbackDuration -= Time.fixedDeltaTime;
@@ -46,7 +46,7 @@ public class BaseController : MonoBehaviour
 
     }
 
-    private void Movment(Vector2 direction)
+    private void Movement(Vector2 direction)
     {
         direction = direction * 5;
         if (knockbackDuration > 0.0f)
