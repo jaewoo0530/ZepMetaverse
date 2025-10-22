@@ -137,3 +137,10 @@ Packages/com.unity.package-manager/
 *.aiff
 *.exr
 *.hdr
+
+# ================= #
+# 커스텀 제외 폴더 #
+# ================= #
+
+# 외부 라이브러리나 리소스 제외
+Assets/Externals/
