@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LobbyPlayer : MonoBehaviour
+public class LobbyPlayerController : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
     private Camera camera;
@@ -30,6 +30,7 @@ public class LobbyPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         Movement();
+        TryInteract();
     }
 
     private void Movement()
@@ -48,5 +49,13 @@ public class LobbyPlayer : MonoBehaviour
         bool isLeft = Mathf.Abs(rotZ) > 90f;
 
         characterRenderer.flipX = isLeft;
+    }
+
+    private void TryInteract()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            
+        }
     }
 }
