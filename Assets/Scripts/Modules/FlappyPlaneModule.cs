@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class FlappyPlaneModule : MonoBehaviour
 {
     private int currentScore = 0;
+    private int bestScore = 0;
+
     [SerializeField] private FlappyUI flappyUI;
 
     public void Init()
     {
         flappyUI = FindObjectOfType<FlappyUI>();
-        currentScore = 0;
         flappyUI.UpdateScore(currentScore);
     }
 
@@ -23,6 +24,14 @@ public class FlappyPlaneModule : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
+
+        if (bestScore < currentScore)
+        {
+            bestScore = currentScore;
+            flappyUI.BestScore(bestScore);
+        }
+
+        currentScore = 0;
         flappyUI.SetRestart();
     }
 
