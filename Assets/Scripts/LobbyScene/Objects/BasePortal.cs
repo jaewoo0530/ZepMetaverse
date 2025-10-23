@@ -31,8 +31,8 @@ public class BasePortal : MonoBehaviour, IInteractable
         }
     }
 
-    protected void ChangeScene(string sceneName)
+    protected void ChangeScene(int sceneNumber)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneNumber);
     }
 }
