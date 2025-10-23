@@ -27,6 +27,7 @@ public class LobbyPlayerController : MonoBehaviour
     void Update()
     {
         Rotate();
+        characterRenderer.sortingOrder = 100 - (int)transform.position.y;
     }
 
     private void FixedUpdate()
