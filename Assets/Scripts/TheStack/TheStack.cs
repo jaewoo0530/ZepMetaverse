@@ -153,6 +153,7 @@ public class TheStack : MonoBehaviour
         if (isMovingX)
         {
             float deltaX = prevBlockPosition.x - lastPosition.x; //짤릴 크기
+            bool isNegativeNum = (deltaX < 0) ? true : false;
 
             deltaX = Mathf.Abs(deltaX); //절대값
             if (deltaX > ErrorMargin)
@@ -169,6 +170,16 @@ public class TheStack : MonoBehaviour
                 Vector3 tempPosition = lastBlock.localPosition;
                 tempPosition.x = middle;
                 lastBlock.localPosition = lastPosition = tempPosition;
+
+                float rubbleHalfScale = deltaX / 2;
+                CreateRubble(
+                new Vector3(isNegativeNum
+                        ? lastPosition.x + stackBounds.x / 2 + rubbleHalfScale
+                        : lastPosition.x - stackBounds.x / 2 - rubbleHalfScale
+                    , lastPosition.y
+                    , lastPosition.z),
+                new Vector3(deltaX, 1, stackBounds.y)
+            );
             }
             else
             {
@@ -178,6 +189,7 @@ public class TheStack : MonoBehaviour
         else
         {
             float deltaZ = prevBlockPosition.z - lastPosition.z; //짤릴 크기
+            bool isNegativeNum = (deltaZ < 0) ? true : false;
 
             deltaZ = Mathf.Abs(deltaZ); //절대값
             if (deltaZ > ErrorMargin)
@@ -194,6 +206,17 @@ public class TheStack : MonoBehaviour
                 Vector3 tempPosition = lastBlock.localPosition;
                 tempPosition.z = middle;
                 lastBlock.localPosition = lastPosition = tempPosition;
+
+                float rubbleHalfScale = deltaZ / 2f;
+                CreateRubble(
+                new Vector3(
+                    lastPosition.x
+                    , lastPosition.y
+                    , isNegativeNum
+                        ? lastPosition.z + stackBounds.y / 2 + rubbleHalfScale
+                        : lastPosition.z - stackBounds.y / 2 - rubbleHalfScale),
+                new Vector3(stackBounds.x, 1, deltaZ)
+            );
             }
             else
             {
@@ -204,5 +227,18 @@ public class TheStack : MonoBehaviour
         secondaryPosition = (isMovingX) ? lastBlock.localPosition.x : lastBlock.localPosition.z;
 
         return true;
+    }
+
+    void CreateRubble(Vector3 pos, Vector3 scale)
+    {
+        GameObject go = Instantiate(lastBlock.gameObject);
+        go.transform.parent = this.transform;
+
+        go.transform.localPosition = pos;
+        go.transform.localScale = scale;
+        go.transform.localRotation = Quaternion.identity;
+
+        go.AddComponent<Rigidbody>();
+        go.name = "Rubble";
     }
 }
