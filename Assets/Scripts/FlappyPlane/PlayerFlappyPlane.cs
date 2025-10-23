@@ -15,10 +15,13 @@ public class PlayerFlappyPlane : MonoBehaviour
 
     private bool isFlap = false;
 
+    private GameManager gameManager;
+
     void Start()
     {
         animator = transform.GetComponentInChildren<Animator>();
         rigidbody = transform.GetComponent<Rigidbody2D>();
+        gameManager = GameManager.Instance;
     }
 
     void Update()
@@ -29,7 +32,7 @@ public class PlayerFlappyPlane : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
-                    SceneManager.LoadScene(1);
+                    gameManager.flappyPlaneModule.RestartGame();
                 }
             }
             else
@@ -71,8 +74,10 @@ public class PlayerFlappyPlane : MonoBehaviour
         if (isDead)
             return;
 
-        animator.SetBool("IsDie", true);
         isDead = true;
         deathCooldown = 1f;
+
+        animator.SetBool("IsDie", true);
+        gameManager.flappyPlaneModule.GameOver();
     }
 }
