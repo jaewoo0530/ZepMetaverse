@@ -31,6 +31,11 @@ public class FlappyPlaneModule : MonoBehaviour
         GameManager.Instance.EnterMiniGame(1);
     }
 
+    public void ExitGame()
+    {
+        GameManager.Instance.ReturnToLobby();
+    }
+
     public void AddScore(int score)
     {
         currentScore += score;

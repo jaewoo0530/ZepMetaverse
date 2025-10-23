@@ -34,6 +34,10 @@ public class PlayerFlappyPlane : MonoBehaviour
                 {
                     gameManager.flappyPlaneModule.RestartGame();
                 }
+                else if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    gameManager.flappyPlaneModule.ExitGame();
+                }
             }
             else
             {
