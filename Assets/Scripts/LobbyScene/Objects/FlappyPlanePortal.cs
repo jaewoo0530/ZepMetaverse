@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlappyPlanePortal : MonoBehaviour
+public class FlappyPlanePortal : BasePortal
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnInteract()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeScene("MiniGame1Scene");
     }
 }
