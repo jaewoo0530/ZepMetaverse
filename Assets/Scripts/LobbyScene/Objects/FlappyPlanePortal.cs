@@ -6,6 +6,6 @@ public class FlappyPlanePortal : BasePortal
 {
     public override void OnInteract()
     {
-        ChangeScene(1);
+        GameManager.Instance.EnterMiniGame(1);
     }
 }
