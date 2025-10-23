@@ -539,11 +539,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6862663021955534843, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.53
       objectReference: {fileID: 0}
     - target: {fileID: 6862663021955534843, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -10.71
       objectReference: {fileID: 0}
     - target: {fileID: 6862663021955534843, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f8e3b5e8cb4ac439b2b9c960136be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flappyUI: {fileID: 0}
+  flappyUIPrefab: {fileID: 8138084238229384750, guid: 2599019ab0c3ede43872aae2e605d5e8, type: 3}
 --- !u!114 &829068784
 MonoBehaviour:
   m_ObjectHideFlags: 0

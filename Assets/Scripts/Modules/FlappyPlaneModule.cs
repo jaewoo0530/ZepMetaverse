@@ -8,12 +8,21 @@ public class FlappyPlaneModule : MonoBehaviour
     private int currentScore = 0;
     private int bestScore = 0;
 
-    [SerializeField] private FlappyUI flappyUI;
+    [SerializeField] private FlappyUI flappyUIPrefab;
+
+    private FlappyUI flappyUI;
 
     public void Init()
     {
-        flappyUI = FindObjectOfType<FlappyUI>();
+        currentScore = 0;
+
+        if (flappyUI == null)
+        {
+            flappyUI = Instantiate(flappyUIPrefab);
+        }
+
         flappyUI.UpdateScore(currentScore);
+        flappyUI.BestScore(bestScore);
     }
 
     public void Disable()
@@ -31,7 +40,6 @@ public class FlappyPlaneModule : MonoBehaviour
             flappyUI.BestScore(bestScore);
         }
 
-        currentScore = 0;
         flappyUI.SetRestart();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class PlayerFlappyPlane : MonoBehaviour
 {
     Animator animator = null;
     Rigidbody2D rigidbody = null;
+    Collider2D collider2D = null;
 
     public float flapForce = 6f;
     public float forwardSpeed = 3f;
@@ -21,6 +23,7 @@ public class PlayerFlappyPlane : MonoBehaviour
     {
         animator = transform.GetComponentInChildren<Animator>();
         rigidbody = transform.GetComponent<Rigidbody2D>();
+        collider2D = transform.GetComponentInChildren<Collider2D>();
         gameManager = GameManager.Instance;
     }
 
@@ -28,6 +31,8 @@ public class PlayerFlappyPlane : MonoBehaviour
     {
         if (isDead)
         {
+            collider2D.enabled = false;
+
             if (deathCooldown <= 0)
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
