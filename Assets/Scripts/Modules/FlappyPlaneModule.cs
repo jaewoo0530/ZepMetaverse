@@ -11,7 +11,8 @@ public class FlappyPlaneModule : MonoBehaviour
     public void Init()
     {
         flappyUI = FindObjectOfType<FlappyUI>();
-        flappyUI.UpdateScore(0);
+        currentScore = 0;
+        flappyUI.UpdateScore(currentScore);
     }
 
     public void Disable()
@@ -27,7 +28,7 @@ public class FlappyPlaneModule : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.EnterMiniGame(1);
     }
 
     public void AddScore(int score)
