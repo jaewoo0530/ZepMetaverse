@@ -6,6 +6,6 @@ public class FlappyPlanePortal : BasePortal
 {
     public override void OnInteract()
     {
-        ChangeScene("MiniGame1Scene");
+        ChangeScene(1);
     }
 }

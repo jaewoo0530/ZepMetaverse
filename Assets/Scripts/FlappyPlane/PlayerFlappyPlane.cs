@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PlayerFlappyPlane : MonoBehaviour
+{
+    Animator animator = null;
+    Rigidbody2D rigidbody = null;
+
+    public float flapForce = 6f;
+    public float forwardSpeed = 3f;
+    public bool isDead = false;
+    private float deathCooldown = 0f;
+
+    private bool isFlap = false;
+
+    void Start()
+    {
+        animator = transform.GetComponentInChildren<Animator>();
+        rigidbody = transform.GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (isDead)
+        {
+            if (deathCooldown <= 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                {
+                    SceneManager.LoadScene(1);
+                }
+            }
+            else
+            {
+                deathCooldown -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                isFlap = true;
+            }
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        if (isDead)
+            return;
+
+        Vector3 velocity = rigidbody.velocity;
+        velocity.x = forwardSpeed;
+
+        if (isFlap)
+        {
+            velocity.y += flapForce;
+            isFlap = false;
+        }
+
+        rigidbody.velocity = velocity;
+
+        float angle = Mathf.Clamp((rigidbody.velocity.y * 10f), -90, 90);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead)
+            return;
+
+        animator.SetBool("IsDie", true);
+        isDead = true;
+        deathCooldown = 1f;
+    }
+}
