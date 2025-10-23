@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour
 
     public float widthPadding = 4f;
 
-    public Vector3 SetRandomPlace(Vector3 lastPosition, int obstacleCount)
+    public Vector3 SetRandomPlace(Vector3 lastPosition)
     {
         float holeSize = Random.Range(holeSizeMin, holeSizeMax);
         float halfHoleSize = holeSize / 2f;

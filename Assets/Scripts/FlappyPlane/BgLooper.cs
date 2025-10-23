@@ -6,18 +6,16 @@ public class BgLooper : MonoBehaviour
 {
     public int numBgCount = 5;
 
-    public int obstacleCount = 0;
     public Vector3 obstacleLastPosition = Vector3.zero;
 
     void Start()
     {
         Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>();
         obstacleLastPosition = obstacles[0].transform.position;
-        obstacleCount = obstacles.Length;
 
-        for (int i = 0; i < obstacleCount; i++)
+        for (int i = 0; i < obstacles.Length; i++)
         {
-            obstacleLastPosition = obstacles[i].SetRandomPlace(obstacleLastPosition, obstacleCount);
+            obstacleLastPosition = obstacles[i].SetRandomPlace(obstacleLastPosition);
         }
     }
 
@@ -38,7 +36,7 @@ public class BgLooper : MonoBehaviour
         Obstacle obstacle = collision.GetComponent<Obstacle>();
         if (obstacle)
         {
-            obstacleLastPosition = obstacle.SetRandomPlace(obstacleLastPosition, obstacleCount);
+            obstacleLastPosition = obstacle.SetRandomPlace(obstacleLastPosition);
         }
     }
 }
