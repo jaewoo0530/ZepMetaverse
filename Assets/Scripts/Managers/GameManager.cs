@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
             flappyPlaneModule.Init();
             SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
         }
+        else if (scene.name == "TheStack")
+        {
+            SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
+        }
     }
 
     public void ReturnToLobby()
