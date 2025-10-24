@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BasePortal : MonoBehaviour, IInteractable
 {
-    private SpriteRenderer spriteRenderer;
-
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     public virtual void OnInteract()
     { }

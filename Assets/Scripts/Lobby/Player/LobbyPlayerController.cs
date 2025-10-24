@@ -60,14 +60,38 @@ public class LobbyPlayerController : MonoBehaviour
 
     private void TryInteract()
     {
+        float radius = 0.8f;
+        int interactableLayer = LayerMask.GetMask("Interactable");
+
+        // 디버깅용으로 반경 표시
+        DebugDrawCircle(transform.position, radius, Color.cyan);
+
         if (Input.GetKeyDown(KeyCode.F))
         {
-            interactable = LayerMask.GetMask("Interactable");
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, interactable);
-            if (hit.collider != null)
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, interactableLayer);
+            if (hit != null)
             {
-                hit.collider.GetComponent<IInteractable>()?.OnInteract();
+                Debug.Log($"Interact with {hit.name}");
+                hit.GetComponent<IInteractable>()?.OnInteract();
             }
+            else
+            {
+                Debug.Log("No interactable object nearby");
+            }
+        }
+    }
+
+    private void DebugDrawCircle(Vector3 center, float radius, Color color)
+    {
+        int segments = 20;
+        float angle = 0f;
+        Vector3 prevPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+        for (int i = 1; i <= segments; i++)
+        {
+            angle = i * Mathf.PI * 2 / segments;
+            Vector3 nextPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+            Debug.DrawLine(prevPoint, nextPoint, color);
+            prevPoint = nextPoint;
         }
     }
 }

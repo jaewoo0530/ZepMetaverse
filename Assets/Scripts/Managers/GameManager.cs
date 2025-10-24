@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
         }
+        else if (scene.name == "TopDown")
+        {
+            SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
+        }
     }
 
     public void ReturnToLobby()
