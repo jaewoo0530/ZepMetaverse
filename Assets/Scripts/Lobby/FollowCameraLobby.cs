@@ -32,9 +32,9 @@ public class FollowCameraLobby : MonoBehaviour
         pos.y = target.position.y + offsetY;
 
         if(pos.x > maxX - 12) pos.x = maxX - 12;
-        if(pos.y > maxY - 7) pos.y = maxY - 6;
+        if(pos.y > maxY - 6) pos.y = maxY - 6;
         if(pos.x < minX + 12) pos.x = minX + 12;
-        if(pos.y < minY + 7) pos.y = minY + 6;
+        if(pos.y < minY + 6) pos.y = minY + 6;
         transform.position = pos;
     }
 }
