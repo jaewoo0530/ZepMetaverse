@@ -8,6 +8,11 @@ public class FollowCameraLobby : MonoBehaviour
     float offsetX;
     float offsetY;
 
+    float maxX = 25;
+    float maxY = 25;
+    float minX = -25;
+    float minY = -25;
+
     void Start()
     {
         if (target == null)
@@ -25,6 +30,11 @@ public class FollowCameraLobby : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x = target.position.x + offsetX;
         pos.y = target.position.y + offsetY;
+
+        if(pos.x > maxX - 12) pos.x = maxX - 12;
+        if(pos.y > maxY - 7) pos.y = maxY - 6;
+        if(pos.x < minX + 12) pos.x = minX + 12;
+        if(pos.y < minY + 7) pos.y = minY + 6;
         transform.position = pos;
     }
 }
