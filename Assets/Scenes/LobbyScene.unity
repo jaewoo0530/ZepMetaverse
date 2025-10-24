@@ -2899,6 +2899,8 @@ GameObject:
   - component: {fileID: 829068784}
   - component: {fileID: 829068783}
   - component: {fileID: 829068782}
+  - component: {fileID: 829068787}
+  - component: {fileID: 829068786}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2945,6 +2947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyModule: {fileID: 829068782}
   flappyPlaneModule: {fileID: 829068783}
+  topDownModule: {fileID: 0}
+  theStackMondule: {fileID: 0}
 --- !u!4 &829068785
 Transform:
   m_ObjectHideFlags: 0
@@ -2960,6 +2964,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &829068786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829068781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39590517475732743954127921f9762f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &829068787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829068781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d04223188acce440bf1198331098dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &880028191
 GameObject:
   m_ObjectHideFlags: 0

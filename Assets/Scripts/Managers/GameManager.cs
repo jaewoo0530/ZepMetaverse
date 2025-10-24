@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public LobbyModule lobbyModule;
     public FlappyPlaneModule flappyPlaneModule;
+    public TopDownModule topDownModule;
+    public TheStackMondule theStackMondule;
 
     private void Awake()
     {
@@ -45,10 +47,12 @@ public class GameManager : MonoBehaviour
         }
         else if (scene.name == "TheStack")
         {
+            theStackMondule.Init();
             SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
         }
         else if (scene.name == "TopDown")
         {
+            topDownModule.Init();
             SceneManager.sceneLoaded -= OnMiniGameSceneLoaded;
         }
     }
