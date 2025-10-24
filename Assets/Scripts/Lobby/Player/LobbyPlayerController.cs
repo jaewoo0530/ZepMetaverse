@@ -8,7 +8,8 @@ public class LobbyPlayerController : MonoBehaviour
     private Camera camera;
     private Vector2 direction;
 
-    private LayerMask interactable;
+    [SerializeField] private float interactRadius = 0.8f;
+    [SerializeField] private LayerMask interactableLayer;
 
     [SerializeField] private SpriteRenderer characterRenderer;
 
@@ -27,13 +28,18 @@ public class LobbyPlayerController : MonoBehaviour
     void Update()
     {
         Rotate();
+        
         characterRenderer.sortingOrder = 100 - (int)transform.position.y;
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TryInteract();
+        }
     }
 
     private void FixedUpdate()
     {
         Movement();
-        TryInteract();
     }
 
     private void Movement()
@@ -60,38 +66,22 @@ public class LobbyPlayerController : MonoBehaviour
 
     private void TryInteract()
     {
-        float radius = 0.8f;
-        int interactableLayer = LayerMask.GetMask("Interactable");
-
-        // 디버깅용으로 반경 표시
-        DebugDrawCircle(transform.position, radius, Color.cyan);
-
-        if (Input.GetKeyDown(KeyCode.F))
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, interactRadius, interactableLayer);
+        if (hit != null)
         {
-            Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, interactableLayer);
-            if (hit != null)
-            {
-                Debug.Log($"Interact with {hit.name}");
-                hit.GetComponent<IInteractable>()?.OnInteract();
-            }
-            else
-            {
-                Debug.Log("No interactable object nearby");
-            }
+            Debug.Log($"Interact with {hit.name}");
+            hit.GetComponent<IInteractable>()?.OnInteract();
+        }
+        else
+        {
+            Debug.Log("No interactable object nearby");
         }
     }
 
-    private void DebugDrawCircle(Vector3 center, float radius, Color color)
+    // Scene 뷰에서 선택 시만 표시됨
+    private void OnDrawGizmosSelected()
     {
-        int segments = 20;
-        float angle = 0f;
-        Vector3 prevPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-        for (int i = 1; i <= segments; i++)
-        {
-            angle = i * Mathf.PI * 2 / segments;
-            Vector3 nextPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-            Debug.DrawLine(prevPoint, nextPoint, color);
-            prevPoint = nextPoint;
-        }
+        Gizmos.color = Color.cyan; // 표시 색상
+        Gizmos.DrawWireSphere(transform.position, interactRadius); // 감지 반경 시각화
     }
 }
