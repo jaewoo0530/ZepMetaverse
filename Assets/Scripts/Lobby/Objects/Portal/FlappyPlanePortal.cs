@@ -6,6 +6,6 @@ public class FlappyPlanePortal : BasePortal
 {
     public override void OnInteract()
     {
-        GameManager.Instance.EnterMiniGame(1);
+        GameManager.Instance.EnterMiniGame("FlappyPlane");
     }
 }

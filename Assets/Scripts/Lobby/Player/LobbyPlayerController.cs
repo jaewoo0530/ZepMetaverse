@@ -5,7 +5,6 @@ using UnityEngine;
 public class LobbyPlayerController : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
-    private Camera camera;
     private Vector2 direction;
 
     [SerializeField] private float interactRadius = 0.8f;
@@ -18,11 +17,6 @@ public class LobbyPlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    void Start()
-    {
-        camera = Camera.main;
     }
 
     void Update()

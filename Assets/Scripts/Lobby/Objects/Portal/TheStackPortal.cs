@@ -6,6 +6,6 @@ public class TheStackPortal : BasePortal
 {
     public override void OnInteract()
     {
-        GameManager.Instance.EnterMiniGame(2);
+        GameManager.Instance.EnterMiniGame("TheStack");
     }
 }

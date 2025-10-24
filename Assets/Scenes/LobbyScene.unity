@@ -32183,6 +32183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ab9740958ee53418605735e1583fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactRadius: 0.8
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 8
   characterRenderer: {fileID: 42440365}
   playerSpeed: 5
 --- !u!50 &1526564851

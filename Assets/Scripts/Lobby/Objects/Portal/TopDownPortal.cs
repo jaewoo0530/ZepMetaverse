@@ -6,6 +6,6 @@ public class TopDownPortal : BasePortal
 {
     public override void OnInteract()
     {
-        GameManager.Instance.EnterMiniGame(3);
+        GameManager.Instance.EnterMiniGame("TopDown");
     }
 }

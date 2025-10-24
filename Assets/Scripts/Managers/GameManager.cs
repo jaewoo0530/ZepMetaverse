@@ -29,12 +29,12 @@ public class GameManager : MonoBehaviour
     }
 
     // 씬 전환과 모듈 활성화
-    public void EnterMiniGame(int sceneNumber)
+    public void EnterMiniGame(string name)
     {
         lobbyModule.Disable();
 
         // 씬 전환 후 미니게임 모듈 활성화
-        SceneManager.LoadScene(sceneNumber);
+        SceneManager.LoadScene(name);
         SceneManager.sceneLoaded += OnMiniGameSceneLoaded;
     }
 

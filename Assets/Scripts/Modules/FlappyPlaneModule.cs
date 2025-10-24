@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FlappyPlaneModule : MonoBehaviour
+public class FlappyPlaneModule : MiniGameModule
 {
     private int currentScore = 0;
     private int bestScore = 0;
@@ -12,7 +12,7 @@ public class FlappyPlaneModule : MonoBehaviour
 
     private FlappyUI flappyUI;
 
-    public void Init()
+    public override void Init()
     {
         currentScore = 0;
 
@@ -25,7 +25,7 @@ public class FlappyPlaneModule : MonoBehaviour
         flappyUI.BestScore(bestScore);
     }
 
-    public void Disable()
+    public override void Disable()
     {
 
     }
@@ -41,16 +41,6 @@ public class FlappyPlaneModule : MonoBehaviour
         }
 
         flappyUI.SetRestart();
-    }
-
-    public void RestartGame()
-    {
-        GameManager.Instance.EnterMiniGame(1);
-    }
-
-    public void ExitGame()
-    {
-        GameManager.Instance.ReturnToLobby();
     }
 
     public void AddScore(int score)
