@@ -2947,8 +2947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyModule: {fileID: 829068782}
   flappyPlaneModule: {fileID: 829068783}
-  topDownModule: {fileID: 0}
-  theStackMondule: {fileID: 0}
+  topDownModule: {fileID: 829068786}
+  theStackMondule: {fileID: 829068787}
 --- !u!4 &829068785
 Transform:
   m_ObjectHideFlags: 0
@@ -2976,6 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39590517475732743954127921f9762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flappyUIPrefab: {fileID: 0}
 --- !u!114 &829068787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2988,6 +2989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d04223188acce440bf1198331098dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flappyUIPrefab: {fileID: 0}
 --- !u!1 &880028191
 GameObject:
   m_ObjectHideFlags: 0
