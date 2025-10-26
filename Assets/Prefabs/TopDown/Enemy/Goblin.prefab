@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6681004775471561452}
   - component: {fileID: 7948306832732869730}
   - component: {fileID: 3683742637331769404}
+  - component: {fileID: 3887444951759812248}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
@@ -149,6 +150,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 3
+--- !u!114 &3887444951759812248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490855951200226931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3277245ee6002f4ab93668fb9da69a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 4243724380111800208}
+  weaponPivot: {fileID: 1716993861007486761}
+  weaponPrefab: {fileID: 0}
+  followRange: 15
 --- !u!1 &5780738021385075131
 GameObject:
   m_ObjectHideFlags: 0

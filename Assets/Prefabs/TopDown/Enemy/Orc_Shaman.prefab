@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7908349967600894666}
   - component: {fileID: 6909403272570294265}
   - component: {fileID: 6523297215772337481}
+  - component: {fileID: 6345992302698152871}
   m_Layer: 7
   m_Name: Orc_Shaman
   m_TagString: Untagged
@@ -180,6 +181,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 3
+--- !u!114 &6345992302698152871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282434982736829335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3277245ee6002f4ab93668fb9da69a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 2808714138802965748}
+  weaponPivot: {fileID: 3359780999618098517}
+  weaponPrefab: {fileID: 0}
+  followRange: 15
 --- !u!1 &4057529234325023520
 GameObject:
   m_ObjectHideFlags: 0
