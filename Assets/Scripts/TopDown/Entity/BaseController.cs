@@ -17,9 +17,10 @@ public class BaseController : MonoBehaviour
     private float knockbackDuration = 0.0f;
 
     protected AnimationHandler animationHandler;
+
     protected StatHandler statHandler;
 
-    [SerializeField] public WeaponHandler weaponPrefab;
+    [SerializeField] public WeaponHandler WeaponPrefab;
     protected WeaponHandler weaponHandler;
 
     protected bool isAttacking;
@@ -31,14 +32,10 @@ public class BaseController : MonoBehaviour
         animationHandler = GetComponent<AnimationHandler>();
         statHandler = GetComponent<StatHandler>();
 
-        if (weaponPrefab != null)
-        {
-            weaponHandler = Instantiate(weaponPrefab, weaponPivot);
-        }
+        if (WeaponPrefab != null)
+            weaponHandler = Instantiate(WeaponPrefab, weaponPivot);
         else
-        {
             weaponHandler = GetComponentInChildren<WeaponHandler>();
-        }
     }
 
     protected virtual void Start()
@@ -55,7 +52,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Movement(movementDirection);
+        Movment(movementDirection);
         if (knockbackDuration > 0.0f)
         {
             knockbackDuration -= Time.fixedDeltaTime;
@@ -67,7 +64,7 @@ public class BaseController : MonoBehaviour
 
     }
 
-    private void Movement(Vector2 direction)
+    private void Movment(Vector2 direction)
     {
         direction = direction * statHandler.Speed;
         if (knockbackDuration > 0.0f)
@@ -104,9 +101,7 @@ public class BaseController : MonoBehaviour
     private void HandleAttackDelay()
     {
         if (weaponHandler == null)
-        {
             return;
-        }
 
         if (timeSinceLastAttack <= weaponHandler.Delay)
         {
@@ -118,15 +113,30 @@ public class BaseController : MonoBehaviour
             timeSinceLastAttack = 0;
             Attack();
         }
-
     }
 
     protected virtual void Attack()
     {
         if (lookDirection != Vector2.zero)
-        {
             weaponHandler?.Attack();
+    }
+
+    public virtual void Death()
+    {
+        _rigidbody.velocity = Vector3.zero;
+
+        foreach (SpriteRenderer renderer in transform.GetComponentsInChildren<SpriteRenderer>())
+        {
+            Color color = renderer.color;
+            color.a = 0.3f;
+            renderer.color = color;
         }
 
+        foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
+        {
+            component.enabled = false;
+        }
+
+        Destroy(gameObject, 2f);
     }
 }

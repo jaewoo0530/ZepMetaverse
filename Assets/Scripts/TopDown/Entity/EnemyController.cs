@@ -61,4 +61,9 @@ public class EnemyController : BaseController
         return (target.position - transform.position).normalized;
     }
 
+    public override void Death()
+    {
+        base.Death();
+        enemyManager.RemoveEnemyOnDeath(this);
+    }
 }

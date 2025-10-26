@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceController : MonoBehaviour
 {
-    [SerializeField] private float healthChangeDelay = 0.5f;
+    [SerializeField] private float healthChangeDelay = .5f;
 
     private BaseController baseController;
     private StatHandler statHandler;
@@ -65,7 +65,7 @@ public class ResourceController : MonoBehaviour
 
     private void Death()
     {
-
+        baseController.Death();
     }
 
 }
