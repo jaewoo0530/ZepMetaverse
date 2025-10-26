@@ -27,8 +27,12 @@ public class TheStack : MonoBehaviour
 
     bool isMovingX = true;
 
+    private TheStackMondule theStackMondule;
+
     void Start()
     {
+        theStackMondule = GameManager.Instance.theStackMondule;
+
         if (originBlock == null)
         {
             Debug.Log("OriginBlock is NULL");
@@ -51,9 +55,14 @@ public class TheStack : MonoBehaviour
             if (PlaceBlock())
             {
                 Spawn_Block();
+                theStackMondule.AddScore(1);
             }
             else
             {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    GameManager.Instance.ReturnToLobby();
+                }
                 Debug.Log("Game Over");
             }
         }
@@ -161,6 +170,7 @@ public class TheStack : MonoBehaviour
                 stackBounds.x -= deltaX;
                 if (stackBounds.x <= 0)
                 {
+                    theStackMondule.GameOver();
                     return false;
                 }
 
@@ -197,6 +207,7 @@ public class TheStack : MonoBehaviour
                 stackBounds.y -= deltaZ;
                 if (stackBounds.y <= 0)
                 {
+                    theStackMondule.GameOver();
                     return false;
                 }
 
