@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TD_Idle
+  m_Name: Move
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 6eab1d7b819527e4996c1ec311310be6, type: 3}
+      value: {fileID: 21300000, guid: 5842640c39c2be9498669289cb71b892, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: b0ae5d43e9e383c448527fce7c06fa9a, type: 3}
+      value: {fileID: 21300000, guid: ad0028ab88195394ba4185a1849e1937, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: e179fc0d39c261c448822133c9f7226e, type: 3}
+      value: {fileID: 21300000, guid: 91c29727ef6579d429233913f962f62a, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 57890d1036261be46abab50fa472cf35, type: 3}
+      value: {fileID: 21300000, guid: 290eb89f4fbd6b046bab81bcc23c6f83, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 6eab1d7b819527e4996c1ec311310be6, type: 3}
-    - {fileID: 21300000, guid: b0ae5d43e9e383c448527fce7c06fa9a, type: 3}
-    - {fileID: 21300000, guid: e179fc0d39c261c448822133c9f7226e, type: 3}
-    - {fileID: 21300000, guid: 57890d1036261be46abab50fa472cf35, type: 3}
+    - {fileID: 21300000, guid: 5842640c39c2be9498669289cb71b892, type: 3}
+    - {fileID: 21300000, guid: ad0028ab88195394ba4185a1849e1937, type: 3}
+    - {fileID: 21300000, guid: 91c29727ef6579d429233913f962f62a, type: 3}
+    - {fileID: 21300000, guid: 290eb89f4fbd6b046bab81bcc23c6f83, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -78,4 +78,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.16666667
+    functionName: CreateDustParticles
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
