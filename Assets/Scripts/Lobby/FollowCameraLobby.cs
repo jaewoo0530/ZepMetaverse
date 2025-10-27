@@ -5,8 +5,6 @@ using UnityEngine;
 public class FollowCameraLobby : MonoBehaviour
 {
     public Transform target;
-    float offsetX;
-    float offsetY;
 
     float maxX = 25;
     float maxY = 25;
@@ -17,9 +15,6 @@ public class FollowCameraLobby : MonoBehaviour
     {
         if (target == null)
             return;
-
-        offsetX = transform.position.x - target.position.x;
-        offsetY = transform.position.y - target.position.y;
     }
 
     void Update()
@@ -28,8 +23,8 @@ public class FollowCameraLobby : MonoBehaviour
             return;
 
         Vector3 pos = transform.position;
-        pos.x = target.position.x + offsetX;
-        pos.y = target.position.y + offsetY;
+        pos.x = target.position.x;
+        pos.y = target.position.y;
 
         if(pos.x > maxX - 12) pos.x = maxX - 12;
         if(pos.y > maxY - 6) pos.y = maxY - 6;
