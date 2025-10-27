@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerController : BaseController
 {
-    private TopDownManager gameManager;
+    private TopDownManager topDownManager;
     private Camera camera;
 
-    public void Init(TopDownManager gameManager)
+    public void Init(TopDownManager topDownManager)
     {
-        this.gameManager = gameManager;
+        this.topDownManager = topDownManager;
         camera = Camera.main;
     }
 
@@ -37,6 +37,6 @@ public class PlayerController : BaseController
     public override void Death()
     {
         base.Death();
-        gameManager.GameOver();
+        topDownManager.GameOver();
     }
 }

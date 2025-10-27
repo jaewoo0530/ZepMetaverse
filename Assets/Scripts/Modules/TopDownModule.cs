@@ -8,21 +8,18 @@ public class TopDownModule : MiniGameModule
     private int currentScore = 0;
     private int bestScore = 0;
 
-    [SerializeField] private FlappyUI flappyUIPrefab;
+    [SerializeField] private TopDownManager topDownPrefab;
 
-    private FlappyUI flappyUI;
+    private TopDownManager topDownManager;
 
     public override void Init()
     {
         currentScore = 0;
 
-        if (flappyUI == null)
+        if (topDownManager == null)
         {
-            flappyUI = Instantiate(flappyUIPrefab);
+            topDownManager = Instantiate(topDownPrefab);
         }
-
-        flappyUI.UpdateScore(currentScore);
-        flappyUI.BestScore(bestScore);
     }
 
     public override void Disable()
@@ -37,16 +34,12 @@ public class TopDownModule : MiniGameModule
         if (bestScore < currentScore)
         {
             bestScore = currentScore;
-            flappyUI.BestScore(bestScore);
         }
-
-        flappyUI.SetRestart();
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
         Debug.Log($"Score: {currentScore}");
-        flappyUI.UpdateScore(currentScore);
     }
 }
