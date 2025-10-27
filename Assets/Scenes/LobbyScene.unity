@@ -3309,6 +3309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caad479d45e6f2e41a562314284c5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savedPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &829068783
 MonoBehaviour:
   m_ObjectHideFlags: 0

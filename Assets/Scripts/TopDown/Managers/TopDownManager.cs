@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TopDownManager : MonoBehaviour
 {
+    public static TopDownManager instance;
     public PlayerController player { get; private set; }
     private ResourceController _playerResourceController;
 
@@ -9,16 +10,42 @@ public class TopDownManager : MonoBehaviour
 
     [SerializeField] private EnemyManager enemyManager;
 
+    private TopDownUIManager topDownUIManager;
+    public static bool isFirstLoading = true;
+
     private void Awake()
     {
+        instance = this;
+
         player = FindObjectOfType<PlayerController>();
         player.Init(this);
 
+        topDownUIManager = FindObjectOfType<TopDownUIManager>();
+
+        enemyManager = GetComponentInChildren<EnemyManager>();
         enemyManager.Init(this);
+
+
+        _playerResourceController = player.GetComponent<ResourceController>();
+        _playerResourceController.RemoveHealthChangeEvent(topDownUIManager.ChangePlayerHP);
+        _playerResourceController.AddHealthChangeEvent(topDownUIManager.ChangePlayerHP);
+    }
+
+    private void Start()
+    {
+        if (!isFirstLoading)
+        {
+            StartGame();
+        }
+        else
+        {
+            isFirstLoading = false;
+        }
     }
 
     public void StartGame()
     {
+        topDownUIManager.SetPlayGame();
         StartNextWave();
     }
 
@@ -26,6 +53,7 @@ public class TopDownManager : MonoBehaviour
     {
         currentWaveIndex += 1;
         enemyManager.StartWave(1 + currentWaveIndex / 5);
+        topDownUIManager.ChangeWave(currentWaveIndex);
     }
 
     public void EndOfWave()
@@ -36,13 +64,6 @@ public class TopDownManager : MonoBehaviour
     public void GameOver()
     {
         enemyManager.StopWave();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartGame();
-        }
+        topDownUIManager.SetGameOver();
     }
 }
