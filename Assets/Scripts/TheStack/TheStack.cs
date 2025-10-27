@@ -50,6 +50,11 @@ public class TheStack : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.ReturnToLobby();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             if (PlaceBlock())
@@ -59,10 +64,6 @@ public class TheStack : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    GameManager.Instance.ReturnToLobby();
-                }
                 Debug.Log("Game Over");
             }
         }
