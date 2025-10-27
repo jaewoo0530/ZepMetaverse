@@ -10,11 +10,14 @@ public class TopDownManager : MonoBehaviour
 
     [SerializeField] private EnemyManager enemyManager;
 
+    private TopDownModule topDownModule;
     private TopDownUIManager topDownUIManager;
     public static bool isFirstLoading = true;
 
     private void Awake()
     {
+        topDownModule = GameManager.Instance.topDownModule;
+
         instance = this;
 
         player = FindObjectOfType<PlayerController>();
@@ -51,6 +54,7 @@ public class TopDownManager : MonoBehaviour
 
     void StartNextWave()
     {
+        topDownModule.AddScore(1);
         currentWaveIndex += 1;
         enemyManager.StartWave(1 + currentWaveIndex / 5);
         topDownUIManager.ChangeWave(currentWaveIndex);
@@ -63,6 +67,8 @@ public class TopDownManager : MonoBehaviour
 
     public void GameOver()
     {
+        topDownModule.GameOver();
+        topDownUIManager.BestScore(topDownModule.bestScore);
         enemyManager.StopWave();
         topDownUIManager.SetGameOver();
     }

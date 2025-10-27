@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum UIState
@@ -17,6 +18,7 @@ public class TopDownUIManager : MonoBehaviour
     GameOverUI gameOverUI;
     private UIState currentState;
 
+    public TextMeshProUGUI bestScoreText;
 
     private void Awake()
     {
@@ -56,5 +58,10 @@ public class TopDownUIManager : MonoBehaviour
         homeUI.SetActive(currentState);
         gameUI.SetActive(currentState);
         gameOverUI.SetActive(currentState);
+    }
+
+    public void BestScore(int bestScore)
+    {
+        bestScoreText.text = $"Best: {bestScore}";
     }
 }
