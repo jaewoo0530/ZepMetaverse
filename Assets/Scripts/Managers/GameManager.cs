@@ -59,9 +59,6 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToLobby()
     {
-        // 미니게임 모듈 비활성화
-        flappyPlaneModule.Disable();
-
         SceneManager.LoadScene("LobbyScene");
         SceneManager.sceneLoaded += OnLobbySceneLoaded;
     }

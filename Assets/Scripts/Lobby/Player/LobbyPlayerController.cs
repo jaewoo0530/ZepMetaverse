@@ -17,6 +17,7 @@ public class LobbyPlayerController : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        transform.position = GameManager.Instance.lobbyModule.savedPosition;
     }
 
     void Update()
@@ -77,5 +78,10 @@ public class LobbyPlayerController : MonoBehaviour
     {
         Gizmos.color = Color.cyan; // 표시 색상
         Gizmos.DrawWireSphere(transform.position, interactRadius); // 감지 반경 시각화
+    }
+
+    public void SavePoint()
+    {
+        GameManager.Instance.lobbyModule.savedPosition = transform.position;
     }
 }
