@@ -50,26 +50,20 @@ public class TheStack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (theStackMondule.isGame)
         {
-            GameManager.Instance.ReturnToLobby();
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (PlaceBlock())
+            if (Input.GetMouseButtonDown(0))
             {
-                Spawn_Block();
-                theStackMondule.AddScore(1);
+                if (PlaceBlock())
+                {
+                    Spawn_Block();
+                    theStackMondule.AddScore(1);
+                }
             }
-            else
-            {
-                Debug.Log("Game Over");
-            }
-        }
 
-        MoveBlock();
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, StackMovingSpeed * Time.deltaTime); //선형 보간
+            MoveBlock();
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, StackMovingSpeed * Time.deltaTime); //선형 보간
+        }
     }
 
     bool Spawn_Block()

@@ -7,10 +7,23 @@ public class TheStackMondule : MiniGameModule
 {
     private int currentScore = 0;
     private int bestScore = 0;
+    public bool isGame = false;
+
+    [SerializeField] TheStackUIManager theStackUIManagerPrefab;
+
+    private TheStackUIManager theStackUIManager;
 
     public override void Init()
     {
         currentScore = 0;
+
+        if (theStackUIManager == null)
+        {
+            theStackUIManager = Instantiate(theStackUIManagerPrefab);
+        }
+
+        theStackUIManager.UpdateScore(currentScore);
+        theStackUIManager.BestScore(bestScore);
     }
 
     public override void Disable()
@@ -21,12 +34,22 @@ public class TheStackMondule : MiniGameModule
     public void GameOver()
     {
         Debug.Log("Game Over");
+
+        if (bestScore < currentScore)
+        {
+            bestScore = currentScore;
+            theStackUIManager.BestScore(bestScore);
+        }
+
+        isGame = false;
+
+        theStackUIManager.homeUI.SetActive(true);
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
         Debug.Log($"Score: {currentScore}");
+        theStackUIManager.UpdateScore(currentScore);
     }
-
 }
