@@ -3239,7 +3239,7 @@ MonoBehaviour:
   lobbyModule: {fileID: 829068782}
   flappyPlaneModule: {fileID: 829068783}
   topDownModule: {fileID: 829068786}
-  theStackMondule: {fileID: 829068787}
+  theStackModule: {fileID: 829068787}
 --- !u!4 &829068785
 Transform:
   m_ObjectHideFlags: 0
