@@ -12,7 +12,7 @@ public class TheStackUIManager : MonoBehaviour
 
     public void StartGame()
     {
-        GameManager.Instance.theStackMondule.isGame = true;
+        GameManager.Instance.theStackModule.isGame = true;
         homeUI.SetActive(false);
     }
 

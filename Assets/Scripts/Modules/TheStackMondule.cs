@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TheStackMondule : MiniGameModule
+public class TheStackModule : MiniGameModule
 {
-    private int currentScore = 0;
-    private int bestScore = 0;
+    public int currentScore = 0;
+    public int bestScore = 0;
     public bool isGame = false;
 
     [SerializeField] TheStackUIManager theStackUIManagerPrefab;

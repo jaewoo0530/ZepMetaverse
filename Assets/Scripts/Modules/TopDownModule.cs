@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TopDownModule : MiniGameModule
 {
-    private int currentScore = 0;
-    private int bestScore = 0;
+    public int currentScore = 0;
+    public int bestScore = 0;
 
     [SerializeField] private TopDownManager topDownPrefab;
 

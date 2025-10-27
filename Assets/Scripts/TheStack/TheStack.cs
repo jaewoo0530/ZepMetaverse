@@ -27,11 +27,11 @@ public class TheStack : MonoBehaviour
 
     bool isMovingX = true;
 
-    private TheStackMondule theStackMondule;
+    private TheStackModule theStackModule;
 
     void Start()
     {
-        theStackMondule = GameManager.Instance.theStackMondule;
+        theStackModule = GameManager.Instance.theStackModule;
 
         if (originBlock == null)
         {
@@ -50,14 +50,14 @@ public class TheStack : MonoBehaviour
 
     void Update()
     {
-        if (theStackMondule.isGame)
+        if (theStackModule.isGame)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (PlaceBlock())
                 {
                     Spawn_Block();
-                    theStackMondule.AddScore(1);
+                    theStackModule.AddScore(1);
                 }
             }
 
@@ -165,7 +165,7 @@ public class TheStack : MonoBehaviour
                 stackBounds.x -= deltaX;
                 if (stackBounds.x <= 0)
                 {
-                    theStackMondule.GameOver();
+                    theStackModule.GameOver();
                     return false;
                 }
 
@@ -202,7 +202,7 @@ public class TheStack : MonoBehaviour
                 stackBounds.y -= deltaZ;
                 if (stackBounds.y <= 0)
                 {
-                    theStackMondule.GameOver();
+                    theStackModule.GameOver();
                     return false;
                 }
 
