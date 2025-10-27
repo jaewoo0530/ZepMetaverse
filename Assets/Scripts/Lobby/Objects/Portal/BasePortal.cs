@@ -25,4 +25,15 @@ public class BasePortal : MonoBehaviour, IInteractable
             }
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = false;
+            }
+        }
+    }
 }
