@@ -18,7 +18,7 @@ public class TheStackUIManager : MonoBehaviour
 
     public void ExitGame()
     {
-        GameManager.Instance.ReturnToLobby();
+        GameManager.Instance.theStackModule.ExitGame();
     }
 
     public void UpdateScore(int score)
@@ -38,6 +38,6 @@ public class TheStackUIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        GameManager.Instance.EnterMiniGame("TheStack");
+        GameManager.Instance.theStackModule.RestartGame();
     }
 }

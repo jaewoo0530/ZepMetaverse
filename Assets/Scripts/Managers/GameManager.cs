@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        flappyPlaneModule.bestScore = PlayerPrefs.GetInt("FP_BestScore");
+        theStackModule.bestScore = PlayerPrefs.GetInt("TS_BestScore");
+        topDownModule.bestScore = PlayerPrefs.GetInt("TD_BestScore");
+
         // 초기 로비 모듈 활성화
         lobbyModule.Init();
     }
