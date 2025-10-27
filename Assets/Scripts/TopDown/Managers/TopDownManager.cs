@@ -36,6 +36,7 @@ public class TopDownManager : MonoBehaviour
 
     private void Start()
     {
+        topDownUIManager.BestScore(topDownModule.bestScore);
         if (!isFirstLoading)
         {
             StartGame();

@@ -24,6 +24,7 @@ public class LobbyModule : MonoBehaviour
 
         lobbyUI.PlaneBestScore(GameManager.Instance.flappyPlaneModule.bestScore);
         lobbyUI.StackBestScore(GameManager.Instance.theStackModule.bestScore);
+        lobbyUI.TopDownBestScore(GameManager.Instance.topDownModule.bestScore);
     }
 
     public void Disable()
