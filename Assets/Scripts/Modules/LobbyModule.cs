@@ -14,6 +14,9 @@ public class LobbyModule : MonoBehaviour
 
     public void Disable()
     {
-        playerController.SavePoint();
+        if (playerController != null)
+        {
+            playerController.SavePoint();
+        }
     }
 }

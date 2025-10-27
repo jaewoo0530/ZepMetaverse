@@ -43,7 +43,7 @@ public class TheStackMondule : MiniGameModule
 
         isGame = false;
 
-        theStackUIManager.homeUI.SetActive(true);
+        theStackUIManager.GameOverUI();
     }
 
     public void AddScore(int score)

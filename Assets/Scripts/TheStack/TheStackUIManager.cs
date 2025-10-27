@@ -6,6 +6,7 @@ using UnityEngine;
 public class TheStackUIManager : MonoBehaviour
 {
     public GameObject homeUI;
+    public GameObject gameOverUI;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
 
@@ -28,5 +29,15 @@ public class TheStackUIManager : MonoBehaviour
     public void BestScore(int bestScore)
     {
         bestScoreText.text = $"Best: {bestScore}";
+    }
+
+    public void GameOverUI()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        GameManager.Instance.EnterMiniGame("TheStack");
     }
 }
