@@ -19,12 +19,12 @@ public class GameOverUI : BaseUI
 
     public void OnClickRestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.EnterMiniGame("TopDown");
     }
 
     public void OnClickExitButton()
     {
-        Application.Quit();
+        GameManager.Instance.ReturnToLobby();
     }
 
     protected override UIState GetUIState()
