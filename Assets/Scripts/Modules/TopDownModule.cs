@@ -21,7 +21,7 @@ public class TopDownModule : MiniGameModule
 
     public override void Disable()
     {
-
+        TopDownManager.isFirstLoading = true;
     }
 
     public void GameOver()

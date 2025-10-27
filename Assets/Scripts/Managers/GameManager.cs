@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        flappyPlaneModule.Disable();
+        theStackModule.Disable();
+        topDownModule.Disable();
+
         SceneManager.LoadScene("LobbyScene");
         SceneManager.sceneLoaded += OnLobbySceneLoaded;
     }
