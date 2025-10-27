@@ -11,6 +11,8 @@ public class TheStackModule : MiniGameModule
 
     private TheStackUIManager theStackUIManager;
 
+    private bool isFirstLoading = true;
+
     public override void Init()
     {
         currentScore = 0;
@@ -22,11 +24,21 @@ public class TheStackModule : MiniGameModule
 
         theStackUIManager.UpdateScore(currentScore);
         theStackUIManager.BestScore(bestScore);
+
+        if (!isFirstLoading)
+        {
+            isGame = true;
+        }
+        else
+        {
+            theStackUIManager.homeUI.SetActive(true);
+            isFirstLoading = false;
+        }
     }
 
     public override void Disable()
     {
-
+        isFirstLoading = true;
     }
 
     public void GameOver()

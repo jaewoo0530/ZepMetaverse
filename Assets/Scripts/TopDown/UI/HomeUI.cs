@@ -17,12 +17,12 @@ public class HomeUI : BaseUI
 
     public void OnClickStartButton()
     {
-        TopDownManager.instance.StartGame();
+        GameManager.Instance.EnterMiniGame("TopDown");
     }
 
     public void OnClickExitButton()
     {
-        Application.Quit();
+        GameManager.Instance.ReturnToLobby();
     }
 
     protected override UIState GetUIState()
