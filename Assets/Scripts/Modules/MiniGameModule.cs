@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MiniGameModule : MonoBehaviour
 {
+    public int currentScore = 0;
+    public int bestScore = 0;
     public virtual void Init()
     {
 

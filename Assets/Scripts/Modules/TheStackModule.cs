@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TheStackModule : MiniGameModule
 {
-    public int currentScore = 0;
-    public int bestScore = 0;
     public bool isGame = false;
 
     [SerializeField] TheStackUIManager theStackUIManagerPrefab;

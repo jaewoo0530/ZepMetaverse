@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FlappyPlaneModule : MiniGameModule
 {
-    public int currentScore = 0;
-    public int bestScore = 0;
-
     [SerializeField] private FlappyUI flappyUIPrefab;
 
     private FlappyUI flappyUI;
