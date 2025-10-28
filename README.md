@@ -78,4 +78,4 @@ PlayerPrefs (로컬 저장)
 
 
 ## Trouble Shooting
-[트러블슈팅 블로그](https://jjw6672.tistory.com/29, "티스토리")
+[트러블슈팅 블로그](https://jjw6672.tistory.com/29 "티스토리")
