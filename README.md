@@ -5,8 +5,7 @@
 2. [주요기능](#주요기능)
 3. [개발기간](#개발기간)
 4. [기술스택](#기술스택)
-5. [와이어프레임](#와이어프레임)
-6. [Trouble Shooting](#trouble-shooting)
+5. [Trouble Shooting](#trouble-shooting)
 
 ## 👨‍🏫 프로젝트 소개
 미니게임 과제
@@ -70,9 +69,6 @@ PC (Windows)
 ### ✔️  DBMS
 PlayerPrefs (로컬 저장)
 
-
-
-## 와이어프레임
 
 
 
