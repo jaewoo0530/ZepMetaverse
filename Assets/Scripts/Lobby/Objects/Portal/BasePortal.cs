@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BasePortal : MonoBehaviour, IInteractable
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject canvus;
 
     public virtual void OnInteract()
     { }
@@ -15,9 +15,9 @@ public class BasePortal : MonoBehaviour, IInteractable
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("¡¢√À!");
-            if (spriteRenderer != null)
+            if (canvus != null)
             {
-                spriteRenderer.enabled = true;
+                canvus.SetActive(true);
             }
             else
             {
@@ -30,9 +30,9 @@ public class BasePortal : MonoBehaviour, IInteractable
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (spriteRenderer != null)
+            if (canvus != null)
             {
-                spriteRenderer.enabled = false;
+                canvus.SetActive(false);
             }
         }
     }
