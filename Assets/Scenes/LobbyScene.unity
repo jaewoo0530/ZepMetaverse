@@ -228,6 +228,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &268560395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3320242407728697647, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
+  m_PrefabInstance: {fileID: 637601997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321660803
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +442,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360631729}
   m_CullTransparentMesh: 1
+--- !u!1 &383483415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910608557162340504, guid: 78374200707473e4d81b909fd509fff5, type: 3}
+  m_PrefabInstance: {fileID: 423455530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &391147465
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 391147466}
     m_Modifications:
+    - target: {fileID: 6315482188882817846, guid: 78374200707473e4d81b909fd509fff5, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 383483415}
     - target: {fileID: 8045512931052922661, guid: 78374200707473e4d81b909fd509fff5, type: 3}
       propertyPath: m_Name
       value: TopDownPortal
@@ -841,6 +855,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 391147466}
     m_Modifications:
+    - target: {fileID: 2205342949160973529, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 268560395}
     - target: {fileID: 6862663021955534843, guid: bd41d6179892c8946b1f33fa02fbb4bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
@@ -37654,6 +37672,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2053349490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1608586802418759467, guid: 18d27b7d661d6de47970314921b8b46d, type: 3}
+  m_PrefabInstance: {fileID: 7386613949414827507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2112381617
 GameObject:
   m_ObjectHideFlags: 0
@@ -41481,6 +41504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheStackPortal
       objectReference: {fileID: 0}
+    - target: {fileID: 8787940569678312757, guid: 18d27b7d661d6de47970314921b8b46d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 2053349490}
     - target: {fileID: 9192539886587678422, guid: 18d27b7d661d6de47970314921b8b46d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.5
