@@ -126,7 +126,6 @@ Packages/com.unity.package-manager/
 # =============== #
 *.psd
 *.tga
-*.png
 *.jpg
 *.jpeg
 *.fbx
