@@ -29,19 +29,22 @@
 ## 📚️ 기술스택
 
 ### ✔️ Language
-
-
+C#
 ### ✔️ Version Control
-
+Git
 ### ✔️ IDE
+Unity Editor (2022.3.62f2)
 
+Visual Studio 2022 (또는 Visual Studio Code)
 ### ✔️ Framework
+Unity Engine
 
+.NET Framework (C# 기반)
 ### ✔️ Deploy
-
+PC (Windows)
 
 ### ✔️  DBMS
-
+PlayerPrefs (로컬 저장)
 
 
 
