@@ -31,11 +31,13 @@
 - 기능 3
 
 점수저장
+
 ![점수저장](https://github.com/jaewoo0530/ZepMetaverse/blob/main/ScreenShot/%EC%A0%90%EC%88%98%20%EC%A0%80%EC%9E%A5.png)
 - 기능 4
 
 NPC
 
+![NPC](https://github.com/jaewoo0530/ZepMetaverse/blob/main/ScreenShot/NPC.png)
 ![NPCTalk](https://github.com/jaewoo0530/ZepMetaverse/blob/main/ScreenShot/NPC%EB%8C%80%ED%99%94.png)
 
 
