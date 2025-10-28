@@ -36,7 +36,6 @@
 
 NPC
 
-![NPC](https://github.com/jaewoo0530/ZepMetaverse/blob/main/ScreenShot/NPC.png)
 ![NPCTalk](https://github.com/jaewoo0530/ZepMetaverse/blob/main/ScreenShot/NPC%EB%8C%80%ED%99%94.png)
 
 
